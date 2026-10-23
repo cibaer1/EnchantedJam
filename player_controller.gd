@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var animal_transform_controller: Script
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 
@@ -13,6 +13,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("Transform"):
+		#animal_transform_controller 
+		pass
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
