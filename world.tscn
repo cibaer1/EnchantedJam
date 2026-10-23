@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://ef0wfwsq3oew"]
 
-[ext_resource type="PackedScene" uid="uid://c2msp4vk0obil" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://c2msp4vk0obil" path="res://Scenes/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://bnptyh0vltjhs" path="res://icon.svg" id="2_fj7yv"]
 [ext_resource type="Script" uid="uid://yx1cm7cv5rfh" path="res://scripts/camera_2d.gd" id="2_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://nyhafcxhs2dp" path="res://platform.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://nyhafcxhs2dp" path="res://Scenes/platform.tscn" id="4_aqk2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("2_fj7yv")
@@ -144,7 +144,7 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 
 [node name="Player" parent="." unique_id=80646361 instance=ExtResource("1_f3sb7")]
 SPEED = 80.0
-JUMP_VELOCITY = -200.0
+JUMP_VELOCITY = -300.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=27611064 node_paths=PackedStringArray("player_body")]
 position = Vector2(-9, 5)
