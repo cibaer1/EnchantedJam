@@ -80,6 +80,8 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 [node name="World" type="Node2D" unique_id=985930488]
 
 [node name="Player" parent="." unique_id=80646361 instance=ExtResource("1_f3sb7")]
+SPEED = 80.0
+JUMP_VELOCITY = -200.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=3225736]
 position = Vector2(0, 18)
