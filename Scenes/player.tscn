@@ -149,7 +149,7 @@ scale = Vector2(0.71875, 0.6875)
 sprite_frames = SubResource("SpriteFrames_fbhi3")
 animation = &"walking"
 autoplay = "walking"
-frame_progress = 0.8694395
+frame_progress = 0.3542766
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1256518944]
 root_node = NodePath("../HumanSpriteAnim")
