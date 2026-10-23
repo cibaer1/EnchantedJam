@@ -1,0 +1,2 @@
+extends AtlasTexture
+class_name wheel_options

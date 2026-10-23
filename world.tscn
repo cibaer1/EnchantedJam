@@ -173,3 +173,4 @@ selection_wheel = NodePath("selection_wheel")
 
 [node name="selection_wheel" parent="CanvasLayer" unique_id=1580554946 instance=ExtResource("5_036b0")]
 visible = false
+options = null
