@@ -4,15 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://lryhcb0ow4bp" path="res://textures/TempPlayer.png" id="2_6t5aa"]
 [ext_resource type="Script" uid="uid://di1srby7kb58g" path="res://Scenes/animal_transform_controller.gd" id="3_6t5aa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5p0e"]
-size = Vector2(3, 14)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
+radius = 3.0
+height = 13.0
 
 [node name="Player" type="CharacterBody2D" unique_id=80646361]
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630197813]
-position = Vector2(-0.5, 3)
-shape = SubResource("RectangleShape2D_l5p0e")
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_6t5aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1114755004]
 position = Vector2(0, -3)

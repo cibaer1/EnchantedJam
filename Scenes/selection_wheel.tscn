@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://44i5n2q18qgx" path="res://scripts/selection_wheel.gd" id="1_w8kca"]
 [ext_resource type="Script" uid="uid://hivca24smql6" path="res://wheel_options.gd" id="2_a61fs"]
-[ext_resource type="Texture2D" uid="uid://bnptyh0vltjhs" path="res://icon.svg" id="3_hux7u"]
+[ext_resource type="Texture2D" uid="uid://lryhcb0ow4bp" path="res://textures/TempPlayer.png" id="3_a61fs"]
 [ext_resource type="Texture2D" uid="uid://bi0was6pjn2uu" path="res://textures/CatUI.png" id="4_ull34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eg7p"]
-atlas = ExtResource("3_hux7u")
+atlas = ExtResource("3_a61fs")
 region = Rect2(0, 0, 32, 32)
 script = ExtResource("2_a61fs")
 metadata/_custom_type_script = "uid://hivca24smql6"
