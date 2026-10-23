@@ -13,7 +13,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("Transform"):
-		animal_transform_controller.animal_transform()
+		$AnimalTransformController.animal_transform()
+	if Input.is_action_just_released("Transform"):
+		$AnimalTransformController.close_transform_menu()
 		
 
 	# Get the input direction and handle the movement/deceleration.
