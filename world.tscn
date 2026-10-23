@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bitpi73kwkeav" path="res://Scenes/selection_wheel.tscn" id="5_036b0"]
 [ext_resource type="Script" uid="uid://dc8fvcwbvbbix" path="res://UIController.gd" id="5_dwbse"]
 [ext_resource type="Script" uid="uid://dslm32s2jhh0u" path="res://scripts/killzone.gd" id="5_gbfbk"]
+[ext_resource type="Script" uid="uid://hivca24smql6" path="res://wheel_options.gd" id="8_wse8f"]
+[ext_resource type="Texture2D" uid="uid://bi0was6pjn2uu" path="res://textures/CatUI.png" id="9_ic0uy"]
+[ext_resource type="Texture2D" uid="uid://dockbqg2aac4w" path="res://textures/firdtframewitch4.png" id="10_k3n1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ioo17"]
 texture = ExtResource("4_gbfbk")
@@ -102,11 +105,29 @@ _data = {
 &"move": SubResource("Animation_gbfbk")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a61fs"]
+atlas = ExtResource("9_ic0uy")
+script = ExtResource("8_wse8f")
+name = "Nothing"
+metadata/_custom_type_script = "uid://hivca24smql6"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("10_k3n1d")
+region = Rect2(0, 0, 32, 32)
+script = ExtResource("8_wse8f")
+name = "Human"
+metadata/_custom_type_script = "uid://hivca24smql6"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8kca"]
+atlas = ExtResource("9_ic0uy")
+region = Rect2(0, 0, 32, 32)
+script = ExtResource("8_wse8f")
+name = "Cat"
+metadata/_custom_type_script = "uid://hivca24smql6"
+
 [node name="World" type="Node2D" unique_id=985930488]
 
 [node name="Player" parent="." unique_id=80646361 instance=ExtResource("1_f3sb7")]
-SPEED = 100.0
-JUMP_VELOCITY = -350.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=27611064 node_paths=PackedStringArray("player_body")]
 position = Vector2(-9, 5)
@@ -146,6 +167,6 @@ selection_wheel = NodePath("selection_wheel")
 
 [node name="selection_wheel" parent="CanvasLayer" unique_id=1580554946 instance=ExtResource("5_036b0")]
 visible = false
-hilight_col = null
+options = Array[ExtResource("8_wse8f")]([SubResource("AtlasTexture_a61fs"), SubResource("AtlasTexture_x3wgy"), SubResource("AtlasTexture_w8kca")])
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

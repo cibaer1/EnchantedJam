@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="animal_stats" format=3 uid="uid://cm22ksyo4u2ew"]
+
+[ext_resource type="Script" uid="uid://bsraus5o6isn3" path="res://Recourses/animal_stats.gd" id="1_4pxq7"]
+
+[resource]
+script = ExtResource("1_4pxq7")
+speed = 200
+acceleration = 400
+jump_velocity = -350
+collider_radius = 1.5
+collider_height = 10
+deceleration = 250
+turn_speed = 600
+metadata/_custom_type_script = "uid://bsraus5o6isn3"
