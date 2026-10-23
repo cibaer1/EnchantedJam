@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bnptyh0vltjhs" path="res://icon.svg" id="2_fj7yv"]
 [ext_resource type="Script" uid="uid://yx1cm7cv5rfh" path="res://scripts/camera_2d.gd" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://nyhafcxhs2dp" path="res://Scenes/platform.tscn" id="4_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://bitpi73kwkeav" path="res://Scenes/selection_wheel.tscn" id="5_036b0"]
-[ext_resource type="Script" uid="uid://dc8fvcwbvbbix" path="res://UIController.gd" id="5_dwbse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("2_fj7yv")
@@ -205,6 +203,7 @@ position = Vector2(230, -23)
 [node name="platform2" parent="." unique_id=810026930 instance=ExtResource("4_aqk2v")]
 <<<<<<< HEAD
 position = Vector2(305, 3)
+<<<<<<< HEAD
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2109029973 node_paths=PackedStringArray("selection_wheel")]
 script = ExtResource("5_dwbse")
@@ -218,3 +217,5 @@ position = Vector2(303, -21)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platform2" unique_id=212184891]
 libraries/ = SubResource("AnimationLibrary_dwbse")
 >>>>>>> 55a6f2bb74c92c2376c5fa24f3ce4931303286a0
+=======
+>>>>>>> parent of 3efaa77 (implemented a 3 script communication to show / hide the radial menu)
