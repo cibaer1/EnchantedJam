@@ -1,7 +1,7 @@
 @tool
 extends Control
 
-@export var options = []
+@export var options: Array[wheel_options] = []
 @export var bkg_color: Color
 @export var line_col: Color
 

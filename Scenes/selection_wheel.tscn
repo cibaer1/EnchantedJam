@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://bitpi73kwkeav"]
 
 [ext_resource type="Script" uid="uid://44i5n2q18qgx" path="res://scripts/selection_wheel.gd" id="1_w8kca"]
+[ext_resource type="Script" uid="uid://hivca24smql6" path="res://wheel_options.gd" id="2_a61fs"]
+[ext_resource type="Texture2D" uid="uid://bnptyh0vltjhs" path="res://icon.svg" id="3_hux7u"]
+[ext_resource type="Texture2D" uid="uid://bi0was6pjn2uu" path="res://textures/CatUI.png" id="4_ull34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eg7p"]
+atlas = ExtResource("3_hux7u")
+region = Rect2(0, 0, 32, 32)
+script = ExtResource("2_a61fs")
+metadata/_custom_type_script = "uid://hivca24smql6"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8kca"]
+atlas = ExtResource("4_ull34")
+region = Rect2(0, 0, 32, 32)
+script = ExtResource("2_a61fs")
+metadata/_custom_type_script = "uid://hivca24smql6"
 
 [node name="selection_wheel" type="Control" unique_id=1580554946]
 layout_mode = 3
@@ -12,6 +27,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w8kca")
-options = [null, null]
+options = Array[ExtResource("2_a61fs")]([SubResource("AtlasTexture_5eg7p"), SubResource("AtlasTexture_w8kca")])
 bkg_color = Color(0.23529412, 0.23529412, 0.23529412, 0.5882353)
 line_col = Color(0.75686276, 0.75686276, 0.75686276, 0.5882353)
