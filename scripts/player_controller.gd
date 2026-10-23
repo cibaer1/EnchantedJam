@@ -11,12 +11,14 @@ extends CharacterBody2D
 
 
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var collider: CollisionShape2D
 
 var human_sprite: AnimatedSprite2D
 var cat_sprite: Sprite2D
 var current_stats: animal_stats
+
 
 
 var current_animal: String = "Nothing"
@@ -103,31 +105,43 @@ func _physics_process(delta: float) -> void:
 
 	
 	var direction := Input.get_axis("MoveW", "MoveE")
+	
+	####################################################### LATER: add the same logic for the cat sprite and we just show at the end whicherver one is relevanat its a bit inneviciant but its fine
+	if direction == 1:
+		update_animation("human_walk")
+		human_sprite.flip_h = false
+	elif direction == -1:
+		update_animation("human_walk")	
+		human_sprite.flip_h = true
+	else:
+		update_animation("human_idle")
+	
+	#######################################################
+		
 	var target_speed = direction * current_stats.speed
 	var rate: float
-	#print(direction)
-	#print (signf(velocity.x))
+
 	if direction == signf(velocity.x): 
 		if is_on_floor():
 			rate = current_stats.acceleration
 		else:
 			rate = current_stats.acceleration * current_stats.air_control
+			
+			
 		#flip sprite to side a
-		#iff running animation ISNT playing start running animation untill stop
+		#print("set animation to walk")
 		
 	elif direction != signf(velocity.x): #turn
 		if is_on_floor():
 			rate = current_stats.turn_speed
 		else:
 			rate = current_stats.turn_speed * current_stats.air_control
-		#flip sprite to side b
-		#iff running animation ISNT playing start running animation untill stop
+		#flip sprite b side
 	else: # decellerate
 		if is_on_floor():
 			rate = current_stats.deceleration
 		else:
 			rate = current_stats.deceleration * current_stats.air_break
-		#stop running animation
 	velocity.x = move_toward(velocity.x, target_speed, rate * delta)
 	
 	
@@ -136,7 +150,10 @@ func _physics_process(delta: float) -> void:
 
 
 
-
+func update_animation(animation: String):
+	if animation_player.current_animation != animation:
+		
+		animation_player.play(animation)
 
 func die(): 
 	get_tree().reload_current_scene()
