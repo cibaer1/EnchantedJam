@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://b7m4wg188byu8"]
 
-[ext_resource type="Texture2D" uid="uid://bnptyh0vltjhs" path="res://icon.svg" id="1_mi635"]
+[ext_resource type="Texture2D" uid="uid://cf5vux2xondrq" path="res://textures/unnamed.png" id="1_mi635"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbhi3"]
-size = Vector2(36, 23)
+size = Vector2(34, 12)
 
 [node name="platform" type="AnimatableBody2D" unique_id=1850056996]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830288383]
-position = Vector2(7.499998, 1)
-scale = Vector2(0.2734375, 0.1875)
+scale = Vector2(1.07, 1)
 texture = ExtResource("1_mi635")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453576145]
-position = Vector2(8, 1.5)
+position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_fbhi3")
 one_way_collision = true
