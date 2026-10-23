@@ -4,9 +4,4 @@
 
 [resource]
 script = ExtResource("1_80ywh")
-speed = 100
-acceleration = 300
-jump_velocity = -200
-deceleration = 300
-turn_speed = 500
 metadata/_custom_type_script = "uid://bsraus5o6isn3"
