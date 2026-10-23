@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpbwsoqe8l1ev"
-path="res://.godot/imported/groundTilemap.png-ff0e7a2c0108efb12b541388bd8822dd.ctex"
+uid="uid://difloauot07xh"
+path="res://.godot/imported/newgrasswondert.png-b836b465b809a40d4d49398adbb575ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/groundTilemap.png"
-dest_files=["res://.godot/imported/groundTilemap.png-ff0e7a2c0108efb12b541388bd8822dd.ctex"]
+source_file="res://textures/newgrasswondert.png"
+dest_files=["res://.godot/imported/newgrasswondert.png-b836b465b809a40d4d49398adbb575ce.ctex"]
 
 [params]
 
