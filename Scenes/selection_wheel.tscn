@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bitpi73kwkeav"]
 
-[ext_resource type="Script" uid="uid://44i5n2q18qgx" path="res://scripts/selection_wheel.gd" id="1_ofd7g"]
+[ext_resource type="Script" uid="uid://44i5n2q18qgx" path="res://scripts/selection_wheel.gd" id="1_w8kca"]
 
 [node name="selection_wheel" type="Control" unique_id=1580554946]
 layout_mode = 3
@@ -11,4 +11,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ofd7g")
+script = ExtResource("1_w8kca")
+bkg_color = Color(0.23529412, 0.23529412, 0.23529412, 0.5882353)
+line_col = Color(0.75686276, 0.75686276, 0.75686276, 0.5882353)

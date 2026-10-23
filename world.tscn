@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bnptyh0vltjhs" path="res://icon.svg" id="2_fj7yv"]
 [ext_resource type="Script" uid="uid://yx1cm7cv5rfh" path="res://scripts/camera_2d.gd" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://nyhafcxhs2dp" path="res://Scenes/platform.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://bitpi73kwkeav" path="res://Scenes/selection_wheel.tscn" id="5_036b0"]
+[ext_resource type="Script" uid="uid://dc8fvcwbvbbix" path="res://UIController.gd" id="5_dwbse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("2_fj7yv")
@@ -164,3 +166,10 @@ position = Vector2(230, -23)
 
 [node name="platform2" parent="." unique_id=810026930 instance=ExtResource("4_aqk2v")]
 position = Vector2(305, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2109029973 node_paths=PackedStringArray("selection_wheel")]
+script = ExtResource("5_dwbse")
+selection_wheel = NodePath("selection_wheel")
+
+[node name="selection_wheel" parent="CanvasLayer" unique_id=1580554946 instance=ExtResource("5_036b0")]
+visible = false
