@@ -14,7 +14,7 @@ extends CharacterBody2D
 
 var collider: CollisionShape2D
 
-var human_sprite: Sprite2D
+var human_sprite: AnimatedSprite2D
 var cat_sprite: Sprite2D
 var current_stats: animal_stats
 
@@ -32,7 +32,7 @@ func _ready() -> void:
 	ui_controller.selected_animal.connect(animal_transform)
 	collider = $CollisionShape2D
 	
-	human_sprite = $HumanSprite
+	human_sprite = $HumanSpriteAnim
 	cat_sprite = $CatSprite
 	
 	
@@ -112,20 +112,23 @@ func _physics_process(delta: float) -> void:
 			rate = current_stats.acceleration
 		else:
 			rate = current_stats.acceleration * current_stats.air_control
+		#flip sprite to side a
+		#iff running animation ISNT playing start running animation untill stop
+		
 	elif direction != signf(velocity.x): #turn
 		if is_on_floor():
 			rate = current_stats.turn_speed
 		else:
 			rate = current_stats.turn_speed * current_stats.air_control
-		
+		#flip sprite to side b
+		#iff running animation ISNT playing start running animation untill stop
 	else: # decellerate
 		if is_on_floor():
 			rate = current_stats.deceleration
 		else:
 			rate = current_stats.deceleration * current_stats.air_break
-		pass
+		#stop running animation
 	velocity.x = move_toward(velocity.x, target_speed, rate * delta)
-	#print(move_toward(velocity.x, target_speed, rate * delta))
 	
 	
 	move_and_slide()
