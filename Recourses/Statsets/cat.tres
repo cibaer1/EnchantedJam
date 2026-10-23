@@ -9,6 +9,7 @@ acceleration = 400
 jump_height = 55
 time_to_apex = 0.245
 time_to_fall = 0.225
+jump_cutoff = 0.8
 collider_radius = 1.5
 collider_height = 10
 deceleration = 250

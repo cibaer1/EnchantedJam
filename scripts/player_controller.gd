@@ -4,6 +4,10 @@ extends CharacterBody2D
 
 @export var human_stats: animal_stats
 @export var cat_stats: animal_stats
+@export var phantom_cam: PhantomCamera2D
+
+@export var look_down_follow_offset: Vector2
+@export var default_follow_offset: Vector2
 
 
 
@@ -36,6 +40,8 @@ func _ready() -> void:
 	current_stats = human_stats
 	
 	calculate_jump_values()
+	
+	phantom_cam.follow_offset = default_follow_offset
 
 func set_collider_size(radius: float, height: float):
 	var capsule := collider.shape as CapsuleShape2D
@@ -88,6 +94,11 @@ func _physics_process(delta: float) -> void:
 		ui_controller.show_selection_wheel()
 	if Input.is_action_just_released("Transform"):
 		ui_controller.hide_selection_wheel()
+	if Input.is_action_just_pressed("Down"):
+		phantom_cam.follow_offset = look_down_follow_offset
+	if Input.is_action_just_released("Down"):
+		phantom_cam.follow_offset = default_follow_offset
+		
 		
 
 	
