@@ -5,10 +5,61 @@
 [ext_resource type="Texture2D" uid="uid://bi0was6pjn2uu" path="res://textures/CatUI.png" id="3_6t5aa"]
 [ext_resource type="Resource" uid="uid://cm22ksyo4u2ew" path="res://Recourses/Statsets/cat.tres" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dockbqg2aac4w" path="res://textures/firdtframewitch4.png" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://4i3jp7esg2py" path="res://textures/PlayerWalkingSpritemap.png" id="6_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
 radius = 3.0
 height = 13.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
+atlas = ExtResource("6_x3wgy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbhi3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gymyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu2lt")
+}],
+"loop": 1,
+"name": &"running",
+"speed": 10.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=80646361]
 script = ExtResource("1_onrkg")
@@ -29,3 +80,10 @@ visible = false
 position = Vector2(1, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_6t5aa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=938376534]
+position = Vector2(1, -4)
+scale = Vector2(0.71875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_fbhi3")
+animation = &"running"
+frame_progress = 0.20835005
