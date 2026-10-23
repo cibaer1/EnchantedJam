@@ -6,10 +6,11 @@
 script = ExtResource("1_4pxq7")
 speed = 200
 acceleration = 400
-jump_height = 55
-time_to_apex = 0.245
-time_to_fall = 0.225
+jump_height = 35
+time_to_apex = 0.205
+time_to_fall = 0.4
 jump_cutoff = 0.8
+air_control = 0.8
 collider_radius = 1.5
 collider_height = 10
 deceleration = 250
