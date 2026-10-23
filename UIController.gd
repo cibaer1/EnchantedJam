@@ -1,6 +1,7 @@
 extends CanvasLayer
 class_name UIController
 
+signal selected_animal(animal: String)
 
 @export var selection_wheel: Control
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +15,8 @@ func _process(delta: float) -> void:
 func show_selection_wheel():
 	selection_wheel.show()
 func hide_selection_wheel():
-	selection_wheel.hide()
+	var animal = selection_wheel.close()
+	selected_animal.emit(animal)
 	
 	
 	

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c2msp4vk0obil"]
+
+[ext_resource type="Script" uid="uid://4nrndj0per0m" path="res://scripts/player_controller.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://lryhcb0ow4bp" path="res://textures/TempPlayer.png" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://di1srby7kb58g" path="res://Scenes/animal_transform_controller.gd" id="3_6t5aa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
+radius = 3.0
+height = 13.0
+
+[node name="Player" type="CharacterBody2D" unique_id=80646361]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630197813]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_6t5aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1114755004]
+position = Vector2(0, -3)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_6t5aa")
+
+[node name="AnimalTransformController" type="Node2D" parent="." unique_id=1632873619]
+script = ExtResource("3_6t5aa")
