@@ -177,7 +177,7 @@ func die():
 	global_position = current_checkpoint
 
 func animal_transform(selected_animal: String):
-	current_animal = selected_animal
+	
 	match selected_animal:
 		"Nothing":
 			pass
@@ -187,6 +187,7 @@ func animal_transform(selected_animal: String):
 			cat_sprite.hide()
 			human_sprite.show()
 			current_stats = human_stats
+			current_animal = "Human"
 			calculate_jump_values()
 		"Cat":
 			set_collider_size(1.5, 10)
@@ -194,4 +195,5 @@ func animal_transform(selected_animal: String):
 			cat_sprite.show()
 			human_sprite.hide()
 			current_stats = cat_stats
+			current_animal = "Cat"
 			calculate_jump_values()
