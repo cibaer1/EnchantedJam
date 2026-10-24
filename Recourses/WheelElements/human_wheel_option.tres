@@ -1,0 +1,11 @@
+[gd_resource type="AtlasTexture" script_class="wheel_options" format=3 uid="uid://bln2671v061l"]
+
+[ext_resource type="Texture2D" uid="uid://dockbqg2aac4w" path="res://textures/firdtframewitch4.png" id="1_oufrq"]
+[ext_resource type="Script" uid="uid://hivca24smql6" path="res://wheel_options.gd" id="1_wrw3t"]
+
+[resource]
+atlas = ExtResource("1_oufrq")
+region = Rect2(0, 0, 32, 32)
+script = ExtResource("1_wrw3t")
+name = "Human"
+metadata/_custom_type_script = "uid://hivca24smql6"

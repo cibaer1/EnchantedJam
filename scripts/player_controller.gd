@@ -15,9 +15,9 @@ extends CharacterBody2D
 var collider: CollisionShape2D
 
 var human_sprite: AnimatedSprite2D
-var cat_sprite: Sprite2D
+var cat_sprite: AnimatedSprite2D
 var current_stats: animal_stats
-
+var is_jumping = false
 
 
 var current_animal: String = "Nothing"
@@ -36,11 +36,12 @@ func _ready() -> void:
 	collider = $CollisionShape2D
 	
 	human_sprite = $HumanSpriteAnim
-	cat_sprite = $CatSprite
+	cat_sprite = $CatSpriteAnim
 	
 	
 	set_collider_size(3, 13)
 	current_stats = human_stats
+	current_animal = "Human"
 	
 	calculate_jump_values()
 	
@@ -85,12 +86,17 @@ func _physics_process(delta: float) -> void:
 		is_jump_coming = true
 	
 		
+	if is_on_floor():
+		is_jumping = false
+	
 	
 	
 	# Handle jump.
 	if (Input.is_action_just_pressed("Jump") or is_jump_coming) and coyote_counter > 0:
 		is_jump_coming = false
+		is_jumping = true
 		velocity.y += jump_velocity
+		update_animation((current_animal + "_jump"))
 	if Input.is_action_just_released("Jump") and velocity.y < 0:
 		velocity.y *= current_stats.jump_cutoff
 	if Input.is_action_just_pressed("Transform"):
@@ -109,13 +115,21 @@ func _physics_process(delta: float) -> void:
 	
 	####################################################### LATER: add the same logic for the cat sprite and we just show at the end whicherver one is relevanat its a bit inneficiant but its fine
 	if direction == 1:
-		update_animation("human_walk")
+		if !is_jumping:
+			update_animation((current_animal + "_walk"))
+		
+		
 		human_sprite.flip_h = false
+		cat_sprite.flip_h = false
 	elif direction == -1:
-		update_animation("human_walk")	
+		if !is_jumping:
+			update_animation((current_animal + "_walk"))	
+		
 		human_sprite.flip_h = true
+		cat_sprite.flip_h = true
 	else:
-		update_animation("human_idle")
+		if !is_jumping:
+			update_animation((current_animal + "_idle"))
 	
 	#######################################################
 		
@@ -154,8 +168,9 @@ func _physics_process(delta: float) -> void:
 
 func update_animation(animation: String):
 	if animation_player.current_animation != animation:
-		
 		animation_player.play(animation)
+
+
 
 func die(): 
 	#get_tree().reload_current_scene()
@@ -180,6 +195,3 @@ func animal_transform(selected_animal: String):
 			human_sprite.hide()
 			current_stats = cat_stats
 			calculate_jump_values()
-			
-	
-	

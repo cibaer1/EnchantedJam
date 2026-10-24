@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://vxs712j88v00"]
+
+[ext_resource type="Script" uid="uid://co4727oy8cro1" path="res://cat_book.gd" id="1_kr61k"]
+[ext_resource type="Texture2D" uid="uid://d3h2lumkvjf8q" path="res://textures/cat_book.png" id="2_yno4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wo62"]
+size = Vector2(22, 16)
+
+[sub_resource type="Animation" id="Animation_70uel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(66, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hiqwa"]
+resource_name = "cat_book_float"
+length = 1.4666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.3666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(66, 0), Vector2(66, -8), Vector2(66, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.71, 1.37),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4.31), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2u3nc"]
+_data = {
+&"RESET": SubResource("Animation_70uel"),
+&"cat_book_float": SubResource("Animation_hiqwa")
+}
+
+[node name="cat_book" type="Area2D" unique_id=387907292]
+position = Vector2(66, 0)
+script = ExtResource("1_kr61k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=188445097]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_4wo62")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=158836215]
+libraries/ = SubResource("AnimationLibrary_2u3nc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946184891]
+texture = ExtResource("2_yno4v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

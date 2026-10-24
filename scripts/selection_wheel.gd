@@ -1,5 +1,7 @@
 @tool
 extends Control
+class_name selection_wheel
+
 
 const SPRITE_SIZE = Vector2(32, 32)
 
@@ -7,6 +9,10 @@ const SPRITE_SIZE = Vector2(32, 32)
 @export var bkg_color: Color
 @export var line_col: Color
 @export var hilight_col: Color
+
+@export var nothing_option: wheel_options
+@export var human_option: wheel_options
+@export var cat_option: wheel_options
 
 @export var inner_radius: float = 64
 @export var outer_radius: int = 256
@@ -17,6 +23,11 @@ var selected = 0
 func close():
 	hide()
 	return options[selected].name
+	
+func _ready() -> void:
+	options.clear()
+	options.append(nothing_option)
+	options.append(human_option)
 
 func _draw():
 	var offset = SPRITE_SIZE / -2
@@ -80,3 +91,8 @@ func _process(delta: float) -> void:
 		selected = ceil((mouse_rads / TAU) * (len(options) - 1))
 		
 	queue_redraw()
+
+func add_option(new_option: String):
+	match(new_option):
+		"Cat":
+			options.append(cat_option)

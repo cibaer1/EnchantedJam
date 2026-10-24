@@ -1,0 +1,11 @@
+[gd_resource type="AtlasTexture" script_class="wheel_options" format=3 uid="uid://p2fy6r7uy1em"]
+
+[ext_resource type="Script" uid="uid://hivca24smql6" path="res://wheel_options.gd" id="1_4pvb6"]
+[ext_resource type="Texture2D" uid="uid://bi0was6pjn2uu" path="res://textures/CatUI.png" id="1_lwplu"]
+
+[resource]
+atlas = ExtResource("1_lwplu")
+region = Rect2(0, 0, 32, 32)
+script = ExtResource("1_4pvb6")
+name = "Cat"
+metadata/_custom_type_script = "uid://hivca24smql6"

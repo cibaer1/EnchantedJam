@@ -5,5 +5,8 @@
 [resource]
 script = ExtResource("1_80ywh")
 jump_height = 15
+time_to_apex = 0.2
+time_to_fall = 0.16
+air_break = 0.5
 turn_speed = 400
 metadata/_custom_type_script = "uid://bsraus5o6isn3"
