@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 	
 	var direction := Input.get_axis("MoveW", "MoveE")
 	
-	####################################################### LATER: add the same logic for the cat sprite and we just show at the end whicherver one is relevanat its a bit inneviciant but its fine
+	####################################################### LATER: add the same logic for the cat sprite and we just show at the end whicherver one is relevanat its a bit inneficiant but its fine
 	if direction == 1:
 		update_animation("human_walk")
 		human_sprite.flip_h = false
