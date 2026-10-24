@@ -1,4 +1,3 @@
-
 extends CharacterBody2D
 @onready var ui_controller: UIController = $"../CanvasLayer"
 
@@ -28,6 +27,8 @@ var gravity_up: float
 var gravity_down: float
 var coyote_counter = 0.0;
 var is_jump_coming = false
+
+var current_checkpoint = Vector2(0, 0)
 
 
 func _ready() -> void:
@@ -150,13 +151,15 @@ func _physics_process(delta: float) -> void:
 
 
 
+
 func update_animation(animation: String):
 	if animation_player.current_animation != animation:
 		
 		animation_player.play(animation)
 
 func die(): 
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	global_position = current_checkpoint
 
 func animal_transform(selected_animal: String):
 	current_animal = selected_animal
@@ -168,18 +171,14 @@ func animal_transform(selected_animal: String):
 			#set all sprites except human to invisible and human to visible TODO make a flexible function for this
 			cat_sprite.hide()
 			human_sprite.show()
-			#set all movement attributes TODO also make a flexible function for this
 			current_stats = human_stats
-			current_animal = "Human"
 			calculate_jump_values()
 		"Cat":
 			set_collider_size(1.5, 10)
 			#set all sprites except human to invisible and human to visible TODO make a flexible function for this
 			cat_sprite.show()
 			human_sprite.hide()
-			#set all movement attributes TODO also make a flexible function for this
 			current_stats = cat_stats
-			current_animal = "Cat"
 			calculate_jump_values()
 			
 	
